@@ -5,7 +5,7 @@ import 'package:flutterapp/routes/app_routes.dart';
 
 
 //provider, notifier provider, future provider, async_notifier provider, stream provider
-
+      
 
 void main (){
   runApp(ProviderScope(child: Main()));

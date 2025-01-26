@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/provider.dart';
 
 
 class HomePage extends ConsumerWidget {
@@ -7,7 +8,6 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final todoListState = ref.watch(todoProvider);
     return Scaffold(
       appBar: AppBar(),
       body: Column(
