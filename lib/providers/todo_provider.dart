@@ -13,6 +13,8 @@ class TodoProvider extends Notifier<List<Todo>>{
     ];
   }
 
-
+  void addTodo(Todo todo){
+    state.add(todo);
+  }
 
 }
