@@ -14,8 +14,7 @@ class TodoProvider extends Notifier<List<Todo>>{
   }
 
   void addTodo(Todo todo){
-    print('hello');
-    state.add(todo);
+    state = [...state, todo];
   }
 
 }
