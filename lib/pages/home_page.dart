@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterapp/models/todo.dart';
 import 'package:flutterapp/providers/todo_provider.dart';
+import 'package:flutterapp/widgets/input_widget.dart';
 
 
 class HomePage extends ConsumerWidget {
@@ -10,6 +11,7 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final todoList = ref.watch(todoProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Todo App'),
@@ -19,17 +21,8 @@ class HomePage extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const InputWidget(),
 
-            TextFormField(
-              onFieldSubmitted: (val){
-                ref.read(todoProvider.notifier).addTodo(Todo.add(val));
-                
-
-              },
-              decoration: InputDecoration(
-                hintText: 'What do you want to do?',
-              ),
-            ),
             const SizedBox(height: 20,),
 
             Expanded(
