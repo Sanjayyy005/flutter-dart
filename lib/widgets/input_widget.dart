@@ -25,7 +25,7 @@ class _InputWidgetState extends State<InputWidget> {
              FormBuilderTextField(
                onSubmitted: (val) {
                  if(_formkey.currentState!.saveAndValidate(focusOnInvalid: false)) {
-                   ref.read(todoProvider.notifier).addTodo(Todo.add(val!));
+                   ref.read(todoProvider.notifier).addTodo(Todo(todo:val!, isCompleted: false));
                    _formkey.currentState!.reset();
                  }
                },

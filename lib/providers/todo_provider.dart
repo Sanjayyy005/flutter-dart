@@ -9,7 +9,8 @@ class TodoProvider extends Notifier<List<Todo>>{
   @override
   List<Todo> build() {
     return [
-      Todo(todo: 'get up in the morning', isCompleted: false)
+      Todo(todo: 'get up in the morning', isCompleted: false),
+      Todo(todo: 'get up in the afternoon', isCompleted: false),
     ];
   }
 
@@ -22,4 +23,10 @@ class TodoProvider extends Notifier<List<Todo>>{
     state = [...state];
   }
 
+  void updateTodo(Todo newTodo, bool val){
+    state = [
+      for(final todo in state) todo == newTodo ?
+      Todo(todo: newTodo.todo, isCompleted: val) : todo
+    ];
+  }
 }
