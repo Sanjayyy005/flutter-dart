@@ -24,20 +24,19 @@ class _InputWidgetState extends State<InputWidget> {
             children: [
              FormBuilderTextField(
                onSubmitted: (val) {
-      if(_formkey.currentState!.saveAndValidate(focusOnInvalid: false)) {
-        ref.read(todoProvider.notifier).addTodo(Todo.add(val!));
-        _formkey.currentState!.reset();
-      }
-
+                 if(_formkey.currentState!.saveAndValidate(focusOnInvalid: false)) {
+                   ref.read(todoProvider.notifier).addTodo(Todo.add(val!));
+                   _formkey.currentState!.reset();
+                 }
                },
                  name: 'todo',
                  decoration: InputDecoration(
                  labelText: 'What do you want to do?',
                ),
-      validator: FormBuilderValidators.compose([
-        FormBuilderValidators.required(),
-        FormBuilderValidators.minLength(7)
-      ]),
+                validator: FormBuilderValidators.compose([
+                FormBuilderValidators.required(),
+                FormBuilderValidators.minLength(5),
+               ]),
              ),
               // ElevatedButton(
               //     onPressed: (){

@@ -3,14 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterapp/models/todo.dart';
 import 'package:flutterapp/providers/todo_provider.dart';
 import 'package:flutterapp/widgets/input_widget.dart';
+import 'package:flutterapp/widgets/todo_list.dart';
 
 
-class HomePage extends ConsumerWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context, ref) {
-    final todoList = ref.watch(todoProvider);
+  Widget build(BuildContext context) {
+
 
     return Scaffold(
       appBar: AppBar(
@@ -22,26 +23,8 @@ class HomePage extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const InputWidget(),
-
             const SizedBox(height: 20,),
-
-            Expanded(
-                child: ListView.separated(
-                    itemBuilder: (context, index){
-                      final todo = todoList[index];
-                      return ListTile(
-                        leading: Icon(Icons.today_outlined),
-                        title: Text(todo.todo),
-                      );
-                    },
-                    separatorBuilder: (context, index){
-                      return Divider();
-                    },
-                    itemCount: todoList.length
-                )
-            )
-
-
+            const TodoList(),
           ],
         ),
       ),
