@@ -25,8 +25,7 @@ class TodoProvider extends Notifier<List<Todo>>{
 
   void updateTodo(Todo newTodo, bool val){
     state = [
-      for(final todo in state) todo == newTodo ?
-      Todo(todo: newTodo.todo, isCompleted: val) : todo
+      for(final todo in state) todo == newTodo ? newTodo.copyWith(isCompleted: val) : todo
     ];
   }
 }

@@ -12,6 +12,28 @@ class Todo{
     required this.isCompleted,
 });
 
+  factory Todo.fromJson(Map<String, dynamic> json){
+    return Todo(
+      todo: json['todo'],
+        isCompleted: json['isCompleted'] ?? false
+    );
+  }
+
+  factory Todo.add(String todo){
+    return Todo(
+      todo: todo,
+      isCompleted: false
+    );
+  }
+
+
+  Todo copyWith ({String? todo, bool? isCompleted}){
+    return Todo(
+      todo: todo ?? this.todo,
+      isCompleted: isCompleted ?? this.isCompleted
+    );
+  }
+
 
 
 }

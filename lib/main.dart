@@ -4,7 +4,13 @@ import 'package:flutterapp/routes/app_routes.dart';
 
 //provider, notifier provider, future provider, async_notifier provider, stream provider
 
+void greet({String? name}){
+  print(name ?? 'show');
+}
+
+
 void main (){
+  //greet();
   runApp(ProviderScope(child: Main()));
 
   // final some = [11,22,33,44,55,66];
