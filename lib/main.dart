@@ -10,7 +10,7 @@ void greet({String? name}){
 
 
 void main (){
-  //greet();
+  // greet();
   runApp(ProviderScope(child: Main()));
 
   // final some = [11,22,33,44,55,66];

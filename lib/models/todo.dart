@@ -12,6 +12,7 @@ class Todo{
     required this.isCompleted,
 });
 
+  ////map ma aako data lai model ma convert garne
   factory Todo.fromJson(Map<String, dynamic> json){
     return Todo(
       todo: json['todo'],
@@ -19,6 +20,7 @@ class Todo{
     );
   }
 
+   ////new instance create garne
   factory Todo.add(String todo){
     return Todo(
       todo: todo,
@@ -26,7 +28,7 @@ class Todo{
     );
   }
 
-
+  ////instance ko value update garne
   Todo copyWith ({String? todo, bool? isCompleted}){
     return Todo(
       todo: todo ?? this.todo,
