@@ -4,12 +4,45 @@ import 'package:flutterapp/routes/app_routes.dart';
 
 //provider, notifier provider, future provider, async_notifier provider, stream provider
 
+Future<String> getSome (){
+  return Future.delayed(Duration(seconds: 2), (){
+    return 'hello some1';
+  });
+}
+
+Future<String> getSome1 (){
+  return Future.delayed(Duration(seconds: 5), (){
+    return 'hello some2';
+  });
+}
+
+int getN (){
+  return 90;
+}
+
+
 void greet({String? name}){
   print(name ?? 'show');
 }
 
-
 void main (){
+
+  getSome1().then((val){
+    print(val);
+  }).catchError((err){
+    print(err);
+  });
+
+  getSome().then((val){
+    print(val);
+  }).catchError((err){
+    print(err);
+  });
+  
+   print('hello jee');
+  
+  // final some = getSome();
+  // print(some);
   // greet();
   runApp(ProviderScope(child: Main()));
 
