@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "557527891047",
+    "project_id": "mvvmprojectsocial",
+    "storage_bucket": "mvvmprojectsocial.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557527891047:android:6afc1eb3702e71c09ba8c2",
+        "android_client_info": {
+          "package_name": "com.example.mvvm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8vqnj7q3HLCQOrovDcuVfB-nmm7xvD8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
